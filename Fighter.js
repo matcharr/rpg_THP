@@ -10,14 +10,17 @@ class Fighter extends Character {
         super.takeDamage(effectivDamage)
     }
 
-    // deal 5damage, next turn take 2 damage less, cost 20 mana
+    // deal 5 damage, next turn take 2 damage less, cost 20 mana
     DarkVision = (victim) => {
-        if (this.mana -= 20 > 0) {
+        this.isDarkVision = false
+        if (this.mana >= 20) {
+            this.mana -= 20
+            this.damage = 5
             this.dealDamage(victim)
             this.isDarkVision = true
         } else {
-            console.log("You dont have enough mana")
+            console.log(`You dont have enough mana ${this.mana}`)
         }
+        this.damage = 4
     }
 }
-// TODO: victim or this.name i'm not sure

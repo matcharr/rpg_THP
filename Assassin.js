@@ -6,21 +6,24 @@ class Assassin extends Character {
     isShadowHit = false
 
     takeDamage = (damage_taken) => {
-        const effectivDamage = this.isShadowHit ? 0 : damage_taken
+        const effectivDamage = this.isShadowHit ? 0 && console.log(`SYSTEM CALL: STEALTH MODE ACTIVATE CANNOT TAKE DAMAGE`) : damage_taken
         super.takeDamage(effectivDamage)
     }
 
-    // immune next round, deal 7damage if not killing loose 7damage points, cost 20mana
+    // immune next round, deal 7damage if not killing loose 7 damage points, cost 20mana
     ShadowHit = (victim) => {
-        if (this.mana -= 20 > 0) {
+        this.isShadowHit = false
+        if (this.mana >= 20 && this.damage >= 7) {
+            this.mana -= 20
+            console.log(`${this.name} SUPER POWER SHADOWHIT UNLEASHED!!!`)
             this.dealDamage(victim)
             if (victim.state != "loser") {
-                damage -= 7
+                this.damage = 0
                 this.isShadowHit = true
             }
         } else {
-            console.log("You dont have enough mana")
+            console.log(`You dont have enough mana ${this.mana}`)
         }
+
     }
 }
-// TODO: victim or this.name i'm not sure

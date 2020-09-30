@@ -1,3 +1,4 @@
+//TODO: winner loser playing  i need to check them
 class Character {
     state
     mana
@@ -7,24 +8,26 @@ class Character {
         this.name = name
     }
 
-    shows_tate = () => {
-        console.log(`${this.name} have ${this.healthPoints} life points and ${this.mana} mana!`)
+    shows_state = () => {
+        console.log(`STATUS OF: ${this.name} have ${this.healthPoints} life points, ${this.damage} damage power and ${this.mana} mana left!`)
     }
 
     // if u are killed, status = looser and healthPoints = 0 
     // else just show state
     takeDamage = (damage_taken) => {
-        if ((this.healthPoints -= damage_taken) >= 0) {
-            this.shows_tate()
+        if ((this.healthPoints -= damage_taken) > 0) {
+            console.log(`${this.name} took ${damage_taken} damage points!!!!`)
+            this.shows_state()
         } else {
             this.healthPoints = 0
             this.state = "loser"
-            console.log(`Player${this.name} Killed !`)
+            console.log(`${this.name} couldn't support the damage and got killed!`)
         }
     }
 
     // deal damage and add 20 mana if u kill
     dealDamage = (victim) => {
+        console.log(`${this.name} is Attacking be CAREFULL!!!!`)
         victim.takeDamage(this.damage)
         if (victim.healthPoints < 1) {
             this.mana += 20
