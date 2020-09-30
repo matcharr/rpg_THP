@@ -15,10 +15,12 @@ class Character {
     // if u are killed, status = looser and healthPoints = 0 
     // else just show state
     takeDamage = (damage_taken) => {
+        let temp = this.healthPoints
         if ((this.healthPoints -= damage_taken) > 0) {
             console.log(`${this.name} took ${damage_taken} damage points!!!!`)
             this.shows_state()
         } else {
+            console.log(`${this.name} took ${temp} damage points!!!!`)
             this.healthPoints = 0
             this.state = "loser"
             console.log(`${this.name} couldn't support the damage and got killed!`)

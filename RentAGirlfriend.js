@@ -1,5 +1,6 @@
 class RentAGirlfriend extends Character {
     state = "playing"
+    healthPoints = 200
     mana = 30
     damage = 3
 
@@ -8,6 +9,7 @@ class RentAGirlfriend extends Character {
         if (this.mana >= 30) {
             this.mana -= 30
             console.log(`${this.name} SUPER POWER HOMERUN UNLEASHED!!!`)
+            this.healthPoints = 1
             this.damage = 5000000
             console.log(`ALERT WARNING!!!\nBUG SYSTEM INCOMING!!!!\nYOU OWE ME MONEY BITCH PAY NOW OR DIE!!!`)
             this.dealDamage(victim)

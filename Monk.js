@@ -1,6 +1,6 @@
 class Monk extends Character {
     state = "playing"
-    healthPoints = 7
+    healthPoints = 8
     mana = 200
     damage = 2
 

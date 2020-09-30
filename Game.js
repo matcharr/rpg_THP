@@ -99,3 +99,18 @@ paladin.HealingLighting(monk)
 paladin.shows_state()
 paladin.dealDamage(monk)
 */
+
+//TODO: Testing Super power Wizard
+
+/*
+wizard.Fireball(monk)
+wizard.shows_state()
+wizard.Fireball(monk)
+wizard.shows_state()
+*/
+
+//TODO: Testing Super power RentAGiflfriend
+rentagirlfriend.Homerun(monk)
+rentagirlfriend.shows_state()
+rentagirlfriend.Homerun(monk)
+rentagirlfriend.shows_state()
