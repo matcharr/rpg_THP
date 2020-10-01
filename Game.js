@@ -1,35 +1,39 @@
 class Game extends Character {
     turnLeft = 10
-
-    /*
-     ** TODO: check if one player left before 10 turn end
-     */
+    currentPlayers = []
+        /*
+         ** TODO: check if one player left before 10 turn end
+         */
 
     skipTurn = () => {
         if (this.turnLeft > 0) {
-            this.turnLeft -= 1
+            this.turnLeft -= 1;
         } else if (this.turnLeft == 0 && this.state != "loser") {
-            this.state = "winner"
+            this.state = "winner";
         }
-        return this.turnLeft
+        return this.turnLeft;
     }
 
     startTurn = () => {
         this.restCharacter();
         this.setPreFight();
-        console.log(`it's turn ${this.turnLeft}`)
+        console.log(`it's turn ${this.turnLeft}`);
+    }
+
+    // create players
+    createPlayers = () => {
+        this.currentPlayers = Array.from({ length: this.generateRandomNumber() }, () => {
+            return createRandomCharacter();
+        })
+    }
+
+    watchStats = () => {
+        this.currentPlayers.forEach((player) => { player.shows_state() })
     }
 
     /*
-        watchStats = () => {
-            for each(let class in Character) {
-                class.show_status()
-            }
-        }
-    */
-
-    restCharacter = (Character) => {
-        switch (Character) {
+    restCharacter = (character) => {
+        switch (character) {
             case "Assassin":
                 const assassin = new Assassin("Carl");
                 break;
@@ -54,32 +58,26 @@ class Game extends Character {
                 //default:                                                TODO:  usefull???
         }
     }
+    */
 
     //TODO: random number of Character
-    setFight = () => {
-        const chooseRandomly = Math.floor(Math.random() * Math.floor(Math.floor(Math.random() * Math.floor(7))));
+    createRandomCharacter = () => {
+        const chooseRandomly = Math.floor(Math.random() * Math.floor(7));
         switch (chooseRandomly) {
             case 0:
-                assassin
-                break;
+                return new Assassin("Carl");
             case 1:
-                berzerker
-                break
+                return new Berzerker("Draven");
             case 2:
-                fighter
-                break;
+                return new Fighter("Grace");
             case 3:
-                monk
-                break;
+                return new Monk("Moana");
             case 4:
-                paladin
-                break;
+                return new Paladin("Ulder");
             case 5:
-                wizard
-                break;
+                return new Wizard("Kenny");
             case 6:
-                rentagirlfriend
-                break;
+                return new RentAGirlfriend("Chizuru");
         }
     }
 }
