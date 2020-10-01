@@ -14,6 +14,8 @@ class Game extends Character {
     }
 
     startTurn = () => {
+        this.restCharacter();
+        this.setPreFight();
         console.log(`it's turn ${this.turnLeft}`)
     }
 
