@@ -3,6 +3,7 @@ class Game extends Character {
     /*
      ** TODO: check if one player left before 10 turn end
      */
+
     skipTurn = () => {
         if (this.turnLeft > 0) {
             this.turnLeft -= 1
@@ -15,102 +16,60 @@ class Game extends Character {
     startTurn = () => {
         console.log(`it's turn ${this.turnLeft}`)
     }
+
+
+    restCharacter = (Character) => {
+        switch (Character) {
+            case "Assassin":
+                const assassin = new Assassin("Carl");
+                break;
+            case "Berzerker":
+                const berzerker = new Berzerker("Draven");
+                break
+            case "Fighter":
+                const fighter = new Fighter("Grace");
+                break;
+            case "Monk":
+                const monk = new Monk("Moana");
+                break;
+            case "Paladin":
+                const paladin = new Paladin("Ulder");
+                break;
+            case "Wizard":
+                const wizard = new Wizard("Kenny");
+                break;
+            case "RentAGilfriend":
+                const rentagirlfriend = new RentAGirlfriend("Chizuru");
+                break;
+                //default:                                                TODO:  usefull???
+        }
+    }
+
+    //TODO: random number of Character
+    setFight = (Character) => {
+        const chooseRandomly = Math.floor(Math.random(Character) * Math.floor(7));
+        switch (chooseRandomly) {
+            case 0:
+                assassin
+                break;
+            case 1:
+                berzerker
+                break
+            case 2:
+                fighter
+                break;
+            case 3:
+                monk
+                break;
+            case 4:
+                paladin
+                break;
+            case 5:
+                wizard
+                break;
+            case 6:
+                rentagirlfriend
+                break;
+        }
+    }
 }
-
-//TODO: dont know if this is useless
-//const character = new Character();
-//const my_game = new Game();
-
-const assassin = new Assassin("Carl");
-const berzerker = new Berzerker("Draven");
-const fighter = new Fighter("Grace");
-const monk = new Monk("Moana");
-const paladin = new Paladin("Ulder");
-const wizard = new Wizard("Kenny");
-const rentagirlfriend = new RentAGirlfriend("Chizuru");
-
-//Showing all characters state
-assassin.shows_state()
-berzerker.shows_state()
-fighter.shows_state()
-monk.shows_state()
-paladin.shows_state()
-wizard.shows_state()
-rentagirlfriend.shows_state()
-
-//TODO: Testing dealDamage ALL DONE ISSUE WHEN ATTACKING ASSASSIN
-
-/*
-assassin.dealDamage(monk)
-*/
-
-//TODO: Testing Super power Assassin IMMUNITY TO FIX
-
-/*
-assassin.ShadowHit(monk)
-assassin.shows_state()
-berzerker.dealDamage(assassin)
-assassin.shows_state()
-*/
-
-
-//TODO: Testing Super power Bezerker    ALL DONE
-
-/*
-berzerker.Rage()
-berzerker.shows_state()
-berzerker.Rage()
-berzerker.shows_state()
-berzerker.Rage()
-berzerker.shows_state()
-berzerker.Rage()
-berzerker.shows_state()
-berzerker.dealDamage(monk)
-*/
-
-//TODO: Testing Super power Monk        ALL DONE
-
-/*
-monk.Heal()
-monk.shows_state()
-monk.Heal()
-monk.shows_state()
-monk.Heal()
-monk.shows_state()
-monk.Heal()
-monk.shows_state()
-monk.Heal()
-monk.shows_state()
-*/
-
-//TODO: Testing Super power Fighter  SAME ISSUE AS ASSASSIN
-
-/*
-fighter.DarkVision(monk)
-assassin.ShadowHit(fighter)
-*/
-
-
-//TODO: Testing Super power Paladin
-/*
-paladin.HealingLighting(monk)
-paladin.shows_state()
-paladin.HealingLighting(monk)
-paladin.shows_state()
-paladin.dealDamage(monk)
-*/
-
-//TODO: Testing Super power Wizard
-
-/*
-wizard.Fireball(monk)
-wizard.shows_state()
-wizard.Fireball(monk)
-wizard.shows_state()
-*/
-
-//TODO: Testing Super power RentAGiflfriend
-rentagirlfriend.Homerun(monk)
-rentagirlfriend.shows_state()
-rentagirlfriend.Homerun(monk)
-rentagirlfriend.shows_state()
