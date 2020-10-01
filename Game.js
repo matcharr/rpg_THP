@@ -1,5 +1,6 @@
 class Game extends Character {
-    turnLeft
+    turnLeft = 10
+
     /*
      ** TODO: check if one player left before 10 turn end
      */
@@ -19,6 +20,11 @@ class Game extends Character {
         console.log(`it's turn ${this.turnLeft}`)
     }
 
+    watchStats = () => {
+        for each(let class in Character) {
+            class.show_status()
+        }
+    }
 
     restCharacter = (Character) => {
         switch (Character) {
