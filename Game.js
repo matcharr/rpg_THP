@@ -20,11 +20,13 @@ class Game extends Character {
         console.log(`it's turn ${this.turnLeft}`)
     }
 
-    watchStats = () => {
-        for each(let class in Character) {
-            class.show_status()
+    /*
+        watchStats = () => {
+            for each(let class in Character) {
+                class.show_status()
+            }
         }
-    }
+    */
 
     restCharacter = (Character) => {
         switch (Character) {
@@ -54,8 +56,8 @@ class Game extends Character {
     }
 
     //TODO: random number of Character
-    setFight = (Character) => {
-        const chooseRandomly = Math.floor(Math.random(Character) * Math.floor(7));
+    setFight = () => {
+        const chooseRandomly = Math.floor(Math.random() * Math.floor(Math.floor(Math.random() * Math.floor(7))));
         switch (chooseRandomly) {
             case 0:
                 assassin

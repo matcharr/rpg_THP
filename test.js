@@ -4,7 +4,7 @@ const character = new Character();
 const my_game = new Game();
 */
 
-/* TODO: initialize
+// TODO: initialize
 
 const assassin = new Assassin("Carl");
 const berzerker = new Berzerker("Draven");
@@ -13,10 +13,9 @@ const monk = new Monk("Moana");
 const paladin = new Paladin("Ulder");
 const wizard = new Wizard("Kenny");
 const rentagirlfriend = new RentAGirlfriend("Chizuru");
-*/
 
 
-/*TODO: Showing all characters state
+//TODO: Showing all characters state
 
 assassin.shows_state()
 berzerker.shows_state()
@@ -25,20 +24,20 @@ monk.shows_state()
 paladin.shows_state()
 wizard.shows_state()
 rentagirlfriend.shows_state()
-*/
 
-/*TODO: Testing dealDamage ALL DONE ISSUE WHEN ATTACKING ASSASSIN
+
+//TODO: Testing dealDamage ALL DONE ISSUE WHEN ATTACKING ASSASSIN
 
 assassin.dealDamage(monk)
-*/
 
-/*TODO: Testing Super power Assassin IMMUNITY TO FIX
+
+//TODO: Testing Super power Assassin IMMUNITY TO FIX
 
 assassin.ShadowHit(monk)
 assassin.shows_state()
 berzerker.dealDamage(assassin)
 assassin.shows_state()
-*/
+
 
 
 /*TODO: Testing Super power Bezerker    ALL DONE
