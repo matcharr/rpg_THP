@@ -17,27 +17,33 @@ const rentagirlfriend = new RentAGirlfriend("Chizuru");
 
 //TODO: Showing all characters state
 
-assassin.shows_state()
-berzerker.shows_state()
-fighter.shows_state()
-monk.shows_state()
-paladin.shows_state()
-wizard.shows_state()
-rentagirlfriend.shows_state()
+assassin.shows_state();
+berzerker.shows_state();
+fighter.shows_state();
+monk.shows_state();
+paladin.shows_state();
+wizard.shows_state();
+rentagirlfriend.shows_state();
 
 
-//TODO: Testing dealDamage ALL DONE ISSUE WHEN ATTACKING ASSASSIN
+//TODO: Testing dealDamage ALL DONE
 
-assassin.dealDamage(monk)
+assassin.ShadowHit(wizard);
+assassin.dealDamage(wizard);
+wizard.shows_state();
 
 
-//TODO: Testing Super power Assassin IMMUNITY TO FIX
+assassin.dealDamage(monk);
+monk.Heal();
+monk.shows_state();
+/*TODO: Testing Super power Assassin ALL DONE
+
 
 assassin.ShadowHit(monk)
 assassin.shows_state()
 berzerker.dealDamage(assassin)
 assassin.shows_state()
-
+*/
 
 
 /*TODO: Testing Super power Bezerker    ALL DONE
@@ -67,7 +73,7 @@ monk.Heal()
 monk.shows_state()
 */
 
-/*TODO: Testing Super power Fighter  SAME ISSUE AS ASSASSIN
+/*TODO: Testing Super power Fighter  ALL DONE
 
 fighter.DarkVision(monk)
 assassin.ShadowHit(fighter)

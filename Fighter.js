@@ -5,7 +5,7 @@ class Fighter extends Character {
     damage = 4
     isDarkVision = false
 
-    takeDamage = (damage_taken) => {
+    takeDamage(damage_taken) {
         const effectivDamage = this.isDarkVision ? damage_taken - 2 : damage_taken
         super.takeDamage(effectivDamage)
     }

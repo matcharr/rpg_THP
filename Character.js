@@ -9,7 +9,7 @@ class Character {
     }
 
     shows_state = () => {
-        console.log(`STATUS OF: ${this.name} have ${this.healthPoints} life points, ${this.damage} damage power and ${this.mana} mana left!`);
+        console.log(`STATUS ${this.state} OF: ${this.name} have ${this.healthPoints} life points, ${this.damage} damage power and ${this.mana} mana left!`);
     }
 
     // if u are killed, status = looser and healthPoints = 0 
@@ -30,7 +30,6 @@ class Character {
     // deal damage and add 20 mana if u kill
     dealDamage = (victim) => {
         console.log(`${this.name} is Attacking be CAREFULL!!!!`);
-        console.log(victim.isShadowHit)
         victim.takeDamage(this.damage);
         if (victim.healthPoints < 1) {
             this.mana += 20;

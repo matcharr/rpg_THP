@@ -16,7 +16,8 @@ class Assassin extends Character {
     // immune next round, deal 7damage if not killing loose 7 damage points, cost 20mana
     ShadowHit = (victim) => {
         this.isShadowHit = false;
-        if (this.mana >= 20 && this.damage >= 7) {
+        if (this.mana >= 20 && this.damage >= 6) {
+            this.damage = 7;
             this.isShadowHit = true;
             this.mana -= 20;
             console.log(`${this.name} SUPER POWER SHADOWHIT UNLEASHED!!!`);
@@ -27,6 +28,6 @@ class Assassin extends Character {
         } else {
             console.log(`You dont have enough mana ${this.mana}`);
         }
-
+        this.damage = 6;
     }
 }
